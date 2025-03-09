@@ -1,0 +1,68 @@
+﻿@page "/familymembers"
+@using FamilyTree.Web.Models
+@using FamilyTree.Web.Services
+@inject FamilyMemberService FamilyService
+
+<h3>Family Members</h3>
+
+<button class="btn btn-primary mb-3" @onclick="ShowAddForm">Add Family Member</button>
+
+@if (showAddForm)
+{
+    <EditForm Model="@newMember" OnValidSubmit="@AddMember">
+        <DataAnnotationsValidator />
+        <div class="form-group">
+            <label>First Name</label>
+            <InputText @bind-Value="newMember.FirstName" class="form-control" />
+        </div>
+        <!-- Add other fields -->
+        <button type="submit" class="btn btn-success mt-2">Save</button>
+    </EditForm>
+}
+
+@if (familyMembers != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Parent</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in familyMembers)
+            {
+                <tr>
+                    <td>@member.FirstName @member.LastName</td>
+                    <td>@member.DateOfBirth?.ToShortDateString()</td>
+                    <td>@(familyMembers.FirstOrDefault(p => p.Id == member.ParentId)?.FirstName)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<FamilyMember> familyMembers = new();
+    private FamilyMember newMember = new();
+    private bool showAddForm = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        familyMembers = await FamilyService.GetFamilyMembers();
+    }
+
+    private void ShowAddForm()
+    {
+        showAddForm = true;
+    }
+
+    private async Task AddMember()
+    {
+        await FamilyService.AddFamilyMember(newMember);
+        familyMembers = await FamilyService.GetFamilyMembers();
+        showAddForm = false;
+        newMember = new FamilyMember();
+    }
+}
