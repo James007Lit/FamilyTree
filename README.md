@@ -84,6 +84,9 @@ D:\repos\FamilyTree\
 └── FamilyTree.Web\
     └── (Blazor project files)
 
+![image](https://github.com/user-attachments/assets/44fe3ee2-fe36-4783-b14a-3e876bb6a17f)
+
+
 ## Roadmap and Future Enhancements 
 
 ### Phase 1 (MVP)
