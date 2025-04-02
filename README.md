@@ -10,6 +10,7 @@ Family Tree is a private, collaborative web application designed to help family 
 - [Architecture and Data Model](#architecture-and-data-model)
 - [Setup and Deployment](#setup-and-deployment)
 - [Roadmap and Future Enhancements](#roadmap-and-future-enhancements)
+- [Examples](#examples)
 
 ## Project Description
 The purpose of this project is to create a private tool that allows family members to collaboratively build a family tree. The MVP will focus on:
@@ -108,3 +109,15 @@ Optimize application performance and scalability in the cloud environment.
 ### Phase 4 (Advanced Features)
 Expand support for complex family relationships and additional relationship types.
 Integrate historical data, document uploads, and other genealogical resources.
+
+## Examples
+
+https://www.familysearch.org/en/tree/pedigree/portrait/GH35-PCX
+
+<img width="887" alt="image" src="https://github.com/user-attachments/assets/1f93a1fe-f073-4481-8b7f-ad84c26e8030" />
+
+https://www.myheritage.com/site-family-tree-1691103464/munnik?wizardTotals=1&showTutorial=1&forceTutorial=1
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/ce43b8ef-7a46-4c0a-84e5-1f02bf4defe9" />
+
+
