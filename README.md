@@ -1,7 +1,7 @@
 # Family Tree MVP
 
 ## Overview
-Family Tree is a private, collaborative web application designed to help family members build and share a comprehensive family history. The initial MVP will focus on core functionalities such as adding, viewing, and managing family members and their relationships. Future enhancements will include GEDCOM integration, advanced visualizations, authentication, and eventually cloud deployment.
+Family Tree is a private, collaborative web application designed to help family members build and share a comprehensive family history. Shows how individuals are connected across different generations. The initial MVP will focus on core functionalities such as adding, viewing, and managing family members and their relationships. Future enhancements will include GEDCOM integration, advanced visualizations, authentication, and eventually cloud deployment.
 
 ## Table of Contents
 - [Project Description](#project-description)
@@ -66,6 +66,8 @@ The core entity is the `FamilyMember`, which represents an individual in the fam
 - **Id:** Unique identifier.
 - **FirstName / LastName:** Basic personal details.
 - **DateOfBirth:** Optional birth date.
+- **PlaceOfBirth:** Optional place of birth.
+- **Facts:** Array of additional optional information.
 - **ParentId:** A foreign key that references another `FamilyMember` to create a parent-child relationship.
 - **Children:** A collection of child `FamilyMember` records (self-referencing relationship).
 
